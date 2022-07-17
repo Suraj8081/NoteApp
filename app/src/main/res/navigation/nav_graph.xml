@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/registrationFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.notesapp.fragment.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_mainFragment"
+            app:destination="@id/mainFragment"
+            app:popUpTo="@id/registrationFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/registrationFragment"
+        android:name="com.example.notesapp.fragment.RegistrationFragment"
+        android:label="fragment_registration"
+        tools:layout="@layout/fragment_registration" >
+        <action
+            android:id="@+id/action_registrationFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_registrationFragment_to_mainFragment"
+            app:destination="@id/mainFragment"
+            app:popUpTo="@id/registrationFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.notesapp.fragment.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_notesFragment"
+            app:destination="@id/notesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/notesFragment"
+        android:name="com.example.notesapp.fragment.NotesFragment"
+        android:label="fragment_notes"
+        tools:layout="@layout/fragment_notes" />
+</navigation>
